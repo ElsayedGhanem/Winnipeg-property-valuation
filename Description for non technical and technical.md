@@ -1,13 +1,15 @@
 ## 🧭 Summary for Non-Technical Audience (≤ 200 words)
 
-This project aimed to develop an **automated valuation model (AVM)** to estimate the assessed market value of residential properties in Winnipeg using publicly available city data.  
-The model uses information such as **living area, land size, year built, number of rooms, and building features** (e.g., basement, garage, fireplace, pool) to predict property values.
+This project aimed to create a **data-driven tool** that can estimate the market value of homes in Winnipeg using information already available from the city.  
+The model looks at property characteristics such as **size of the house and land, year it was built, number of rooms, and building features** like garages, basements, or pools to predict the assessed value.
 
-The process began with a simple **linear regression model**, which provided a baseline understanding of how each feature relates to property value. After refining the dataset and applying **log transformations** to reduce skewness in numeric variables, prediction accuracy improved significantly.  
+To start, a simple model was used to understand how each factor affects property prices. However, the first version did not capture the full picture.  
+To improve accuracy, the data was adjusted so that very large or very small numbers did not distort the results.  
 
-Finally, a **Random Forest model** was implemented to capture more complex, nonlinear relationships. This model explained approximately **70% of the information** in property values, highlighting key predictors such as **year built, land area, total living area, property_class_1, and building_type** as the strongest drivers of value.  
+Next, a more advanced machine-learning model was used to recognize **patterns and interactions** that are not directly visible in the data.  
+This improved the model’s ability to explain about **70% of the information in property values**, showing that the **year built, land size, living area, and building type** are among the strongest drivers of a home’s value.
 
-The findings suggest that machine learning models can provide reliable and interpretable tools for municipal property assessment and data-driven decision-making in the real estate sector.
+Overall, this project demonstrates how data analysis and machine learning can support **fairer, faster, and more consistent property assessments** for both residents and city decision-makers.
 
 ## ⚙️ Technical Summary (≤ 500 words)
 
