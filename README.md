@@ -2,6 +2,14 @@
 This project builds an automated valuation model (AVM) to predict the assessed value of residential properties in Winnipeg using open data from the City of Winnipeg.
 
 ---
+## 📂 Files
+| File | Description |
+|------|--------------|
+| `data_preparation.R` | Script for cleaning and preparing data |
+| `modeling.R` | Script for model training, validation, and performance metrics |
+| `README.md` | Project documentation |
+
+---
 ## 📊 Overview
 The goal is to create a reproducible and interpretable model that predicts property-assessed values based on property features such as living area, year built, number of rooms, and building type.  
 The project was completed using **R**, with a focus on proper data preparation, model training, and validation.
@@ -11,11 +19,28 @@ The project was completed using **R**, with a focus on proper data preparation, 
 ## ⚙️ Data Preparation
 All data cleaning and preparation steps were automated in the `data_preparation.R` script:
 - **Removed irrelevant columns:**  
-  Columns unrelated to property value prediction (e.g., address components, roll numbers) were excluded to reduce model noise and improve efficiency.
+  Columns unrelated to property value prediction (e.g., roll numbers, address components, Market Region, Property Use Code, Water Frontage Measurement, etc) were excluded to reduce model noise and improve efficiency.
   
 - **Handled missing values:**
   - For numeric variables, missing values were replaced with the **median** instead of deleting rows. Rationale: The median is more robust to outliers than the mean, ensuring that extreme property values do not distort imputation. Additionally, removing rows would result in significant data loss (~10–20%), which could weaken the model's learning.
   - For categorical variables, missing values were replaced with **"Unknown"** to preserve those records and avoid information loss.
+
+- **Performed Feature Transformation:**
+  - To address skewness in highly right-skewed numeric variables, log transformations were applied to key predictors such as  
+`total_assessed_value`, `total_living_area`, and `assessed_land_area`.  
+The log-transformed features (`total_assessed_value_log`, `total_living_area_log`, and `assessed_land_area_log`) helped stabilize variance and improve linear relationships between variables.
+
+- **Correlation Analysis:**
+ - We compared correlations between the original (raw) and log-transformed features to evaluate the impact of transformation on model interpretability.  
+After transformation, correlations between predictors and the target variable increased noticeably:
+- Example: `cor(total_living_area, total_assessed_value)` = **0.034** →  
+  `cor(total_living_area_log, total_assessed_value_log)` = **0.402**
+- Example: `cor(assessed_land_area, total_assessed_value)` = **0.236** →  
+  `cor(assessed_land_area_log, total_assessed_value_log)` = **0.583**
+- Example: `cor(rooms, total_assessed_value)` = **0.032** →  
+  `cor(rooms, total_assessed_value_log)` = **0.266**
+
+These results confirmed that log transformation improved the linearity and overall predictive power of numeric relationships, making the features more suitable for both linear regression and Random Forest models.
 
 - **Converted categorical variables to factors:**  
   Many R models (e.g., `lm`, `randomForest`) require categorical data to be encoded as factors to automatically generate dummy variables.
@@ -57,14 +82,7 @@ All analytical decisions, modeling choices, and interpretations were made indepe
 
 ---
 
-## 📂 Files
-| File | Description |
-|------|--------------|
-| `data_preparation.R` | Script for cleaning and preparing data |
-| `modeling.R` | Script for model training, validation, and performance metrics |
-| `README.md` | Project documentation |
 
----
 
 ## 🧑‍💻 Author
 **Elsayed Abdalla Ghanem**  
