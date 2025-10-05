@@ -76,15 +76,20 @@ To address this limitation, I:
 - Re-ran the model with transformed variables (`*_log`) along with other numeric predictors (`rooms`, `year_built`). This model achieved a **moderate R² (~0.44)**.
 - Subsequently, I included additional categorical predictors (e.g., `basement` , `basement_finish` , `air_conditioning` , `fire_place` , `attached_garage` , `detached_garage` , `pool` , `building_type , `property_class_1`) to capture more variability in property characteristics.  
 - After these enhancements, the **adjusted R² increased to ~0.60**, showing a clear improvement in the model’s explanatory power.  
-- A **5-fold Cross-Validation** was then applied to validate model consistency, confirming the model’s robustness across data splits.  
-
+- A **5-fold Cross-Validation** was then applied to validate model consistency, confirming the model’s robustness across data splits.
+  
 ---
+### 2️⃣ Advanced Model – Random Forest (RF)
+To further enhance predictive performance and capture **nonlinear relationships** between features, I trained a **Random Forest regression model** using the same set of predictors.  
 
+**Key parameters used:**  
+- `ntree = 200` (number of trees)  
+- `sampsize = 0.6*nrow(dataframe)` (sample size per tree)  
+- Cross-validation: 5-fold  
 
-- **Linear Regression (LM)** — baseline model.  
-- **Random Forest (RF)** — to capture nonlinear relationships and improve prediction accuracy.  
-
-A **5-fold Cross-Validation** was used to evaluate model performance.
+The Random Forest model improved the explained variance to **R² ≈ 0.70**, demonstrating its ability to model complex interactions among features.  
+Feature importance analysis revealed that the most influential predictors were:  
+`year_built`, `assessed_land_area_log`, `total_living_area_log`, and `building_type`.  
 
 ---
 
