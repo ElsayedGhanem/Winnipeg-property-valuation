@@ -55,9 +55,33 @@ These results confirmed that log transformation improved the linearity and overa
 
 ---
 
+## 📈 Evaluation Metrics
+Models were evaluated using:
+- **RMSE** — Root Mean Squared Error (lower is better)
+- **R²** — Proportion of variance explained by the model
+---
+
 ## 🧠 Modeling Approach
 The `modeling.R` script includes the training and evaluation of predictive models.  
-We experimented with:
+The modeling process was conducted in **several stages** to ensure interpretability and gradual performance improvement.
+
+### 1️⃣ Baseline Model – Linear Regression (LM)
+
+I began with a **Linear Regression model** using the raw numerical features (`total_living_area`, `assessed_land_area`, `rooms`, `year_built`) to establish a baseline and understand the linear relationships between predictors and the assessed property value.  
+
+However, the initial model achieved a relatively **low R² (~0.21)**, indicating weak linear correlation between predictors and the target variable.  
+
+To address this limitation, I:  
+- Applied **log transformations** on highly skewed numeric variables (`total_assessed_value`, `total_living_area`, and `assessed_land_area`) to stabilize variance.  
+- Re-ran the model with transformed variables (`*_log`) along with other numeric predictors (`rooms`, `year_built`). This model achieved a **moderate R² (~0.44)**.
+- Subsequently, I included additional categorical predictors (e.g., `basement` , `basement_finish` , `air_conditioning` , `fire_place` , `attached_garage` , `detached_garage` , `pool` , `building_type , `property_class_1`) to capture more variability in property characteristics.  
+
+After these enhancements, the **adjusted R² increased to ~0.60**, showing a clear improvement in the model’s explanatory power.  
+A **5-fold Cross-Validation** was then applied to validate model consistency, confirming the model’s robustness across data splits.  
+
+---
+
+
 - **Linear Regression (LM)** — baseline model.  
 - **Random Forest (RF)** — to capture nonlinear relationships and improve prediction accuracy.  
 
@@ -65,12 +89,7 @@ A **5-fold Cross-Validation** was used to evaluate model performance.
 
 ---
 
-## 📈 Evaluation Metrics
-Models were evaluated using:
-- **RMSE** — Root Mean Squared Error (lower is better)
-- **R²** — Proportion of variance explained by the model
 
----
 
 ## 🧾 Summary for Non-Technical Audience (≤ 200 words)
 *(To be added after final model results — this section will explain the purpose and findings in simple language.)*
