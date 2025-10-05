@@ -75,9 +75,8 @@ To address this limitation, I:
 - Applied **log transformations** on highly skewed numeric variables (`total_assessed_value`, `total_living_area`, and `assessed_land_area`) to stabilize variance.  
 - Re-ran the model with transformed variables (`*_log`) along with other numeric predictors (`rooms`, `year_built`). This model achieved a **moderate R² (~0.44)**.
 - Subsequently, I included additional categorical predictors (e.g., `basement` , `basement_finish` , `air_conditioning` , `fire_place` , `attached_garage` , `detached_garage` , `pool` , `building_type , `property_class_1`) to capture more variability in property characteristics.  
-
-After these enhancements, the **adjusted R² increased to ~0.60**, showing a clear improvement in the model’s explanatory power.  
-A **5-fold Cross-Validation** was then applied to validate model consistency, confirming the model’s robustness across data splits.  
+- After these enhancements, the **adjusted R² increased to ~0.60**, showing a clear improvement in the model’s explanatory power.  
+- A **5-fold Cross-Validation** was then applied to validate model consistency, confirming the model’s robustness across data splits.  
 
 ---
 
