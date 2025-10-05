@@ -36,13 +36,21 @@ Two main models were trained and compared using **5-fold cross-validation**:
 Variable importance analysis indicated that:  
 `year_built`, `assessed_land_area_log`, and `total_living_area_log` were the most influential predictors, followed by categorical features like `building_type` and `property_class_1`.  
 
-| Feature | Importance (%) |
-|----------|----------------|
-| year_built | 29.57 |
-| assessed_land_area_log | 26.86 |
-| total_living_area_log | 22.86 |
-| property_class_1 | 16.05 |
-| building_type | 13.48 |
+| Feature                 | Importance (%) |
+|--------------------------|----------------|
+| year_built               | 29.57 |
+| assessed_land_area_log   | 26.86 |
+| total_living_area_log    | 22.86 |
+| property_class_1         | 16.05 |
+| building_type            | 13.48 |
+| basement_finish          | 9.73 |
+| fire_place               | 9.28 |
+| attached_garage          | 9.64 |
+| air_conditioning         | 8.00 |
+| basement                 | 7.89 |
+| rooms                    | 7.37 |
+| detached_garage          | 6.23 |
+| pool                     | 5.67 |
 
 ### ✅ Results and Insights  
 The combination of **data transformations** and **ensemble learning** enhanced model accuracy and interpretability.  
