@@ -130,6 +130,7 @@ AI assistance helped me to:
 - Clarify R syntax and troubleshoot code.  
 - Improve documentation structure (e.g., organizing the README layout and section flow). 
 - Refine the wording for technical explanations.  
+
 All analytical decisions, modeling choices, and interpretations were made independently by the author.
 
 ---
