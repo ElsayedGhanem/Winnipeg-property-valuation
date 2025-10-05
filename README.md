@@ -125,7 +125,11 @@ Its interpretability through variable importance ranking also made it suitable f
 ---
 
 ## 🤖 Note on AI Assistance
-Parts of this project were developed with guidance from **OpenAI’s ChatGPT (GPT-5)** for clarifying R syntax and organizing code.  
+Parts of this project were developed with guidance from **OpenAI’s ChatGPT (GPT-5)** 
+AI assistance helped me to:  
+- Clarify R syntax and troubleshoot code.  
+- Improve documentation structure (e.g., organizing the README layout and section flow). 
+- Refine the wording for technical explanations.  
 All analytical decisions, modeling choices, and interpretations were made independently by the author.
 
 ---
