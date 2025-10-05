@@ -92,8 +92,22 @@ Feature importance analysis revealed that the most influential predictors were:
 `year_built`, `assessed_land_area_log`, `total_living_area_log`, and `building_type`.  
 
 ---
+### ✅ Summary  
+| Model | Features | R² (Approx.) | Notes |
+|--------|------------|---------------|--------|
+| Linear Regression (raw) | Numeric only | 0.21 | Baseline |
+| Linear Regression (log + categorical) | Transformed + categorical | 0.60 | Improved interpretability |
+| Random Forest | Log-transformed + all predictors | 0.70 | Best performance |
 
+These results indicate that **data transformation** and inclusion of **nonlinear models** significantly improved the overall predictive accuracy.
 
+---
+
+### 🧩 Model Justification  
+The **Random Forest model** was selected as the final predictive model because it effectively captured nonlinear relationships, handled feature interactions automatically, and produced the highest R² score.  
+Its interpretability through variable importance ranking also made it suitable for property valuation applications, where understanding feature influence is essential.
+
+---
 
 ## 🧾 Summary for Non-Technical Audience (≤ 200 words)
 *(To be added after final model results — this section will explain the purpose and findings in simple language.)*
