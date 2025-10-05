@@ -25,6 +25,25 @@ All data cleaning and preparation steps were automated in the `data_preparation.
   - For numeric variables, missing values were replaced with the **median** instead of deleting rows. Rationale: The median is more robust to outliers than the mean, ensuring that extreme property values do not distort imputation. Additionally, removing rows would result in significant data loss (~10–20%), which could weaken the model's learning.
   - For categorical variables, missing values were replaced with **"Unknown"** to preserve those records and avoid information loss.
 
+  **Selected Features:**  
+After cleaning and feature selection, the following predictors were used in modeling:
+
+- `total_living_area`  
+- `assessed_land_area`  
+- `rooms`  
+- `year_built`  
+- `basement`  
+- `basement_finish`  
+- `air_conditioning`  
+- `fire_place`  
+- `attached_garage`  
+- `detached_garage`  
+- `pool`  
+- `building_type`  
+- `property_class_1`
+
+The target variable used for prediction was **`total_assessed_value`**.
+
 - **Performed Feature Transformation:**
   - To address skewness in highly right-skewed numeric variables, log transformations were applied to key predictors such as  
 `total_assessed_value`, `total_living_area`, and `assessed_land_area`.  
