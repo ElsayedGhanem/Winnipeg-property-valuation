@@ -5,7 +5,7 @@ The model uses information such as **living area, land size, year built, number 
 
 The process began with a simple **linear regression model**, which provided a baseline understanding of how each feature relates to property value. After refining the dataset and applying **log transformations** to reduce skewness in numeric variables, prediction accuracy improved significantly.  
 
-Finally, a **Random Forest model** was implemented to capture more complex, nonlinear relationships. This model explained approximately **70% of the variation** in property values, highlighting key predictors such as **year built, land area, and total living area** as the strongest drivers of value.  
+Finally, a **Random Forest model** was implemented to capture more complex, nonlinear relationships. This model explained approximately **70% of the information** in property values, highlighting key predictors such as **year built, land area, total living area, property_class_1, and building_type** as the strongest drivers of value.  
 
 The findings suggest that machine learning models can provide reliable and interpretable tools for municipal property assessment and data-driven decision-making in the real estate sector.
 
