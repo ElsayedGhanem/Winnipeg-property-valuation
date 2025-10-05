@@ -75,7 +75,7 @@ To address this limitation, I:
 - Applied **log transformations** on highly skewed numeric variables (`total_assessed_value`, `total_living_area`, and `assessed_land_area`) to stabilize variance.  
 - Re-ran the model with transformed variables (`log`) along with other numeric predictors (`rooms`, `year_built`). This model achieved a **moderate R² (~0.44)**.
 - Subsequently, I included additional categorical predictors (e.g., `basement` , `basement_finish` , `air_conditioning` , `fire_place` , `attached_garage` , `detached_garage` , `pool` , `building_type` , `property_class_1`) to capture more variability in property characteristics.  
-- After these enhancements, the **adjusted R² increased to ~0.60**, showing a clear improvement in the model’s explanatory power.  
+- After these enhancements, the **adjusted R² increased to ~0.60** and **RMSE = 0.49**, showing a clear improvement in the model’s explanatory power.  
 - A **5-fold Cross-Validation** was then applied to validate model consistency, confirming the model’s robustness across data splits.
   
 ---
@@ -86,7 +86,7 @@ To further enhance predictive performance and capture **nonlinear relationships*
 - `ntree = 200` (number of trees)  
 - `sampsize = 0.6*nrow(dataframe)` (sample size per tree)  
 
-The Random Forest model improved the explained variance to **R² ≈ 0.70**, demonstrating its ability to model complex interactions among features.  
+The Random Forest model improved the explained variance to **R² ≈ 0.70** and **RMSE = 0.17**, demonstrating its ability to model complex interactions among features.  
 Feature importance analysis revealed that the most influential predictors were:  
 To interpret the model, the variable importance plot was analyzed. The table below shows the **top predictors contributing to the model**:
 
