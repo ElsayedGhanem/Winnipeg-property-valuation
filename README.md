@@ -139,7 +139,7 @@ The findings suggest that machine learning models can provide reliable and inter
 ## 🧮 Technical Summary (≤ 500 words)
 The **goal** of this project was to build a reproducible and interpretable predictive model that estimates the *total assessed value* of Winnipeg residential properties based on structural and categorical attributes.  
 
-### 🧹 Data Preparation  
+#### 🧹 Data Preparation  
 Data cleaning and transformation were fully automated in `data_preparation.R`.  
 - **Irrelevant variables** (e.g., address, roll number, property use code) were removed.  
 - **Missing numeric values** were imputed using the median to preserve data integrity.  
@@ -148,7 +148,7 @@ Data cleaning and transformation were fully automated in `data_preparation.R`.
 
 Correlation analysis confirmed that these transformations significantly strengthened relationships with the target variable (e.g., correlation between `total_living_area` and `total_assessed_value` increased from 0.034 to 0.402).  
 
-### 🧠 Modeling Approach  
+#### 🧠 Modeling Approach  
 Two main models were trained and compared using **5-fold cross-validation**:
 1. **Linear Regression (LM):**  
    Served as a baseline model to capture linear relationships. The initial R² was ~0.21.  
@@ -158,7 +158,7 @@ Two main models were trained and compared using **5-fold cross-validation**:
    Designed to model nonlinear interactions among predictors.  
    The RF achieved an R² of approximately 0.70, explaining 0.70% of the variance, which confirms better generalization and robustness.  
 
-### 🔍 Feature Importance  
+#### 🔍 Feature Importance  
 Variable importance analysis indicated that:`year_built`, `assessed_land_area_log`, and `total_living_area_log` were the most influential predictors, followed by categorical features like `building_type` and `property_class_1`.  
 
 | Feature | Importance (%) |
@@ -169,7 +169,7 @@ Variable importance analysis indicated that:`year_built`, `assessed_land_area_lo
 | property_class_1 | 16.05 |
 | building_type | 13.48 |
 
-### ✅ Results and Insights  
+#### ✅ Results and Insights  
 The combination of **data transformations** and **ensemble learning** enhanced model accuracy and interpretability.  
 The Random Forest model provided a reliable basis for predicting property values and identifying the most impactful property characteristics.
 
