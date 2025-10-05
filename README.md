@@ -7,7 +7,7 @@ This project builds an automated valuation model (AVM) to predict the assessed v
 |------|--------------|
 | `data_preparation.R` | Script for cleaning and preparing data |
 | `modeling.R` | Script for model training, validation, and performance metrics |
-| `non.md` |Explanation to non-technical and technical people   |
+| `Model Explanation.md` |Explanation to non-technical and technical people   |
 | `README.md` | Project documentation |
 
 ---
