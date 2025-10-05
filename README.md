@@ -89,7 +89,23 @@ To further enhance predictive performance and capture **nonlinear relationships*
 
 The Random Forest model improved the explained variance to **R² ≈ 0.70**, demonstrating its ability to model complex interactions among features.  
 Feature importance analysis revealed that the most influential predictors were:  
-`year_built`, `assessed_land_area_log`, `total_living_area_log`, and `building_type`.  
+To interpret the model, the variable importance plot was analyzed. The table below shows the **top predictors contributing to the model**:
+
+| Feature                 | Importance (%) |
+|--------------------------|----------------|
+| year_built               | 29.57 |
+| assessed_land_area_log   | 26.86 |
+| total_living_area_log    | 22.86 |
+| property_class_1         | 16.05 |
+| building_type            | 13.48 |
+| basement_finish          | 9.73 |
+| fire_place               | 9.28 |
+| attached_garage          | 9.64 |
+| air_conditioning         | 8.00 |
+| basement                 | 7.89 |
+| rooms                    | 7.37 |
+| detached_garage          | 6.23 |
+| pool                     | 5.67 |  
 
 ---
 ### ✅ Summary  
