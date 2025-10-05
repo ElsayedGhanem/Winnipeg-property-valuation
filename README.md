@@ -10,12 +10,18 @@ The project was completed using **R**, with a focus on proper data preparation, 
 
 ## ⚙️ Data Preparation
 All data cleaning and preparation steps were automated in the `data_preparation.R` script:
-- Removed irrelevant columns.
+- **Removed irrelevant columns:**  
   Columns unrelated to property value prediction (e.g., address components, roll numbers) were excluded to reduce model noise and improve efficiency.
-- Handled missing values using median imputation for numeric variables and “Unknown” for categorical ones.
-- Converted categorical variables to factors.
-- Ensured numeric variables were properly formatted for modeling.
+  
+- **Handled missing values:**
+  - For numeric variables, missing values were replaced with the **median** instead of deleting rows. Rationale: The median is more robust to outliers than the mean, ensuring that extreme property values do not distort imputation. Additionally, removing rows would result in significant data loss (~10–20%), which could weaken the model's learning.
+  - For categorical variables, missing values were replaced with **"Unknown"** to preserve those records and avoid information loss.
 
+- **Converted categorical variables to factors:**  
+  Many R models (e.g., `lm`, `randomForest`) require categorical data to be encoded as factors to automatically generate dummy variables.
+
+- **Ensured numeric variables were properly formatted:**  
+  Numeric columns stored as strings (like “$743,000”) were converted into numeric format to allow mathematical operations.
 ---
 
 ## 🧠 Modeling Approach
