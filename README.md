@@ -85,7 +85,6 @@ To further enhance predictive performance and capture **nonlinear relationships*
 **Key parameters used:**  
 - `ntree = 200` (number of trees)  
 - `sampsize = 0.6*nrow(dataframe)` (sample size per tree)  
-- Cross-validation: 5-fold  
 
 The Random Forest model improved the explained variance to **R² ≈ 0.70**, demonstrating its ability to model complex interactions among features.  
 Feature importance analysis revealed that the most influential predictors were:  
