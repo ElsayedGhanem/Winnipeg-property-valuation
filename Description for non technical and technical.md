@@ -30,7 +30,7 @@ Two main models were trained and compared using **5-fold cross-validation**:
 
 2. **Random Forest (RF):**  
    Designed to model nonlinear interactions among predictors.  
-   The RF achieved R² ≈ 0.59 with ~70% variance explained, confirming better generalization and robustness.  
+   The RF achieved an R² ≈ of ~0.70, with ~70% variance explained, confirming better generalization and robustness.  
 
 ### 🔍 Feature Importance  
 Variable importance analysis indicated that:  
