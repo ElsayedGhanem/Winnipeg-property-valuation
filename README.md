@@ -107,7 +107,7 @@ To further enhance predictive performance and capture **nonlinear relationships*
 - `ntree = 200` (number of trees)  
 - `sampsize = 0.6*nrow(dataframe)` (sample size per tree)  
 
-The Random Forest model improved the explained variance to **R² ≈ 0.70** and **RMSE = 0.17**, demonstrating its ability to model complex interactions among features.  
+The Random Forest model improved the explained variance to **R² ≈ 0.74** and **RMSE = 0.151**, demonstrating its ability to model complex interactions among features.  
 Feature importance analysis revealed that the most influential predictors were:  
 To interpret the model, the variable importance plot was analyzed. The table below shows the **top predictors contributing to the model**:
 
@@ -135,7 +135,7 @@ To interpret the model, the variable importance plot was analyzed. The table bel
 | Linear Regression (raw) | Numeric + categorical | 0.13 | 2524865 |Added categorical variables |
 | Linear Regression (log-trasformed) | Log-Transformed variables + Numeric Variables only| 0.45 | 0.565 |Improved interpretability |
 | Linear Regression (log-trasformed) | Log-Transformed variables (Numeric + categorical) | 0.61 | 0.482 | Stronger fit, improved accuracy |
-| Random Forest | Log-Transformed variables (Numeric + categorical) | 0.70 | 0.151 | Best overall performance
+| Random Forest | Log-Transformed variables (Numeric + categorical) | 0.74 | 0.151 | Best overall performance
 
 These results summarize the progressive improvements achieved across different modeling stages.  
 Starting with a simple linear regression using only numeric features, the baseline model demonstrated limited predictive power.  
