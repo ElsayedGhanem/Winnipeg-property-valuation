@@ -153,9 +153,8 @@ Its interpretability through variable importance ranking also made it suitable f
 ---
 
 ## 🧪 Testing on Unseen Data
+Once the model was trained and validated using 5-fold Cross-Validation, the next step was to ensure that it could generalize well to unseen property data.  
 
-Once the model was trained and validated using 5-fold Cross-Validation,  
-the next step was to ensure that it could generalize well to unseen property data.  
 To achieve this, the same preprocessing pipeline applied during training must be replicated before making predictions.
 
 ### 🔧 Preprocessing Steps for New Data
@@ -183,7 +182,7 @@ When new property data becomes available (e.g., a single house or a batch of lis
 After preprocessing, predictions can be generated using the trained model:
 ```r
    predicted_log <- predict(final_model_rf, newdata = new_data)
-   predicted_value <- exp(predicted_log) - 1  # Convert back to the original scale
+   
 ---
 
 ## 🤖 Note on AI Assistance
