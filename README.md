@@ -180,7 +180,7 @@ When new property data becomes available (e.g., a single house or a batch of lis
 
 ### 🤖 Making Predictions
 ```r
-   new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
+new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
 
 
 ---
