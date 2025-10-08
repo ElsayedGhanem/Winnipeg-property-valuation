@@ -185,7 +185,6 @@ After preprocessing, predictions can be generated using the trained model:
 predicted_log <- predict(final_model_rf, newdata = new_data)
 predicted_value <- exp(predicted_log) - 1  # Convert back to the original scale
 
-
 --- 
    
 ## 🤖 Note on AI Assistance
