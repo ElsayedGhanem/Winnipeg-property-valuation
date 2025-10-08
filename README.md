@@ -151,6 +151,43 @@ The **Random Forest model** was selected as the final predictive model because i
 Its interpretability through variable importance ranking also made it suitable for property valuation applications, where understanding feature influence is essential.
 
 ---
+## 🧪 Testing on Unseen Data
+
+Once the model was trained and validated using 5-fold Cross-Validation,  
+the next step was to ensure that it could generalize well to unseen property data.  
+To achieve this, the same preprocessing pipeline applied during training must be replicated before making predictions.
+
+### 🔧 Preprocessing Steps for New Data
+When new property data becomes available (e.g., a single house or a batch of listings), the following transformations must be applied in the **exact same order** as during training:
+
+1. **Log Transformations:**  
+   Apply logarithmic transformations to numeric predictors to match the training scale:  
+   ```r
+   new_data$total_living_area_log <- log(new_data$total_living_area + 1)
+   new_data$assessed_land_area_log <- log(new_data$assessed_land_area + 1)
+
+2. **Neighbourhood Mean Value**
+  
+Merge the neigh_mean_value feature, which was computed from the training data, instead of recalculating it from the new dataset:
+```r
+   new_data <- merge(new_data, neigh_mean, by = "neighbourhood_area", all.x = TRUE)
+
+3. **Categorical Variables**
+
+Convert all categorical columns into factors using the same levels as the training dataset to avoid mismatches:
+```r
+   cat_cols <- c("basement", "basement_finish", "air_conditioning", "fire_place", "attached_garage", "detached_garage", "pool", "building_type", "property_class_1")
+
+for (col in cat_cols) {
+  new_data[[col]] <- factor(new_data[[col]], levels = levels(df_clean[[col]]))
+}
+
+### 🤖 🤖 Making Predictions
+```r
+   predicted_log <- predict(final_model_rf, newdata = new_data)
+   predicted_value <- exp(predicted_log) - 1  # Convert back to the original scale
+
+---
 
 ## 🤖 Note on AI Assistance
 Parts of this project were developed with guidance from **OpenAI’s ChatGPT (GPT-5)** 
