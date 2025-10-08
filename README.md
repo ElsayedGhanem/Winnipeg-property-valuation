@@ -177,13 +177,14 @@ When new property data becomes available (e.g., a single house or a batch of lis
    cat_cols <- c("basement", "basement_finish", "air_conditioning","fire_place", "attached_garage", "detached_garage",pool", "building_type", "property_class_1")
    for (col in cat_cols) {
    new_data[[col]] <- factor(new_data[[col]], levels = levels(df_clean[[col]]))}
-     
+
 ### 🤖 Making Predictions
 After preprocessing, predictions can be generated using the trained model:
+
 ```r
 predicted_log <- predict(final_model_rf, newdata = new_data)
-# Convert back to the original scale
-predicted_value <- exp(predicted_log) - 1
+predicted_value <- exp(predicted_log) - 1  # Convert back to the original scale
+
 
 --- 
    
