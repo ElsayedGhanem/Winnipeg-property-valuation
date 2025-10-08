@@ -8,7 +8,7 @@ This project builds an automated valuation model (AVM) to predict the assessed v
 | `data_preparation.R` | Script for cleaning and preparing data |
 | `modeling.R` | Script for training and evaluating multiple predictive models **(Linear Regression, Random Forest)** using cross-validation to compare performance. |
 | `Final Model.R` | Script for training the final optimized **Random Forest** model on the full dataset using the best hyperparameters obtained from cross-validation. |
-| `Model Explanation.md` |Explanation to non-technical and technical people   |
+| `Model Explanation.md` |Explanation to non-technical and technical people.|
 | `README.md` | Project documentation |
 
 ---
