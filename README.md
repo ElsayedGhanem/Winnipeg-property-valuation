@@ -170,6 +170,7 @@ When new property data becomes available (e.g., a single house or a batch of lis
   Merge the neigh_mean_value feature, which was computed from the training data, instead of recalculating it from the new dataset:
   ```r
    new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
+
 ---
 
 ## 🤖 Note on AI Assistance
