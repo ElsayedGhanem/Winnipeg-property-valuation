@@ -110,10 +110,12 @@ To interpret the model, the variable importance plot was analyzed. The table bel
 
 ---
 ### ✅ Summary  
-| Model | Features | R² (Approx.) | Notes |
+| Model | Features | R² (Approx.) | RMSE | Notes |
 |--------|------------|---------------|--------|
-| Linear Regression (raw) | Numeric only | 0.21 | Baseline |
-| Linear Regression  | Loh-Transformed + categorical variables | 0.60 | Improved interpretability |
+| Linear Regression (raw) | Numeric only | 0.07 | 2591027 | Baseline |
+| Linear Regression (raw) | Numeric + categorical | 0.13 | 2524865 | Baseline |
+| Linear Regression (raw) | Log-Transformed variables with numeric only| 0.45 | 0.565 |Improved interpretability |
+| Linear Regression (raw) | Log-Transformed variables (Numeric + categorical) | 0.61 | 0.482 | Improved interpretability |
 | Random Forest | Log-transformed + categorical variables | 0.70 | Best performance |
 
 These results indicate that **data transformation** and inclusion of **nonlinear models** significantly improved the overall predictive accuracy.
