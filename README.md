@@ -180,6 +180,8 @@ When new property data becomes available (e.g., a single house or a batch of lis
 
 ### 🤖 Making Predictions
 After preprocessing, predictions can be generated using the trained model:
+```r
+x = 2
 
 --- 
    
