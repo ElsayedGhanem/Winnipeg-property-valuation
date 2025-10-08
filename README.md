@@ -174,7 +174,7 @@ When new property data becomes available (e.g., a single house or a batch of lis
 3. **Categorical Variablese:**  
    Convert all categorical columns into factors using the same levels as the training dataset to avoid mismatches:  
    ```r
-   cat_cols <- c("basement", "basement_finish", "air_conditioning","fire_place", "attached_garage", "detached_garage",pool", "building_type", "property_class_1")
+   cat_cols <- c("basement", "basement_finish", "air_conditioning","fire_place", "attached_garage", "detached_garage","pool", "building_type", "property_class_1")
    for (col in cat_cols) {
    new_data[[col]] <- factor(new_data[[col]], levels = levels(df_clean[[col]]))}
 
