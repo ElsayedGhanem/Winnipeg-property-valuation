@@ -52,6 +52,16 @@ After cleaning and feature selection, the following predictors were used in mode
 
   This approach preserved the geographic effect on property values while reducing dimensionality and improving model stability.
 
+  **Implementation Example in R:**
+  ```r
+  # Compute the average assessed value per neighbourhood
+  neighbour_mean <- aggregate(total_assessed_value_log ~ neighbourhood_area, data = df_clean, mean)
+  # Rename the new column and assign it as a numeric feature
+  colnames(neighbour_mean)[2] <- "neighbour_mean_value"
+
+  # Merge the mean value back into the main dataset
+  df_clean <- merge(df_clean, neighbour_mean, by="neighbourhood_area", all.x=TRUE)
+
 - **Correlation Analysis:**
  - We compared correlations between the original (raw) and log-transformed features to evaluate the impact of transformation on model interpretability.  
 After transformation, correlations between predictors and the target variable increased noticeably:
@@ -80,13 +90,13 @@ The modeling process was conducted in **several stages** to ensure interpretabil
 
 I began with a **Linear Regression model** using the raw numerical features (`total_living_area`, `assessed_land_area`, `rooms`, `year_built`) to establish a baseline and understand the linear relationships between predictors and the assessed property value.  
 
-However, the initial model achieved a relatively **low R² (~0.21)**, indicating weak linear correlation between predictors and the target variable.  
+However, the initial model achieved a relatively **low R² (~0.07)**, indicating weak linear correlation between predictors and the target variable.  
 
 To address this limitation, I:  
 - Applied **log transformations** on highly skewed numeric variables (`total_assessed_value`, `total_living_area`, and `assessed_land_area`) to stabilize variance.  
-- Re-ran the model with transformed variables (`log`) along with other numeric predictors (`rooms`, `year_built`). This model achieved a **moderate R² (~0.44)** and **RMSE = 0.57**.
+- Re-ran the model with transformed variables (`log`) along with other numeric predictors (`rooms`, `year_built`, `neighbour_mean_value`). This model achieved a **moderate R² (~0.45)** and **RMSE = 0.565**.
 - Subsequently, I included additional categorical predictors (e.g., `basement` , `basement_finish` , `air_conditioning` , `fire_place` , `attached_garage` , `detached_garage` , `pool` , `building_type` , `property_class_1`) to capture more variability in property characteristics.  
-- After these enhancements, the **adjusted R² increased to ~0.60** and **RMSE = 0.49**, showing a clear improvement in the model’s explanatory power.  
+- After these enhancements, the **adjusted R² increased to ~0.61** and **RMSE = 0.482**, showing a clear improvement in the model’s explanatory power.  
 - A **5-fold Cross-Validation** was then applied to validate model consistency, confirming the model’s robustness across data splits.
   
 ---
