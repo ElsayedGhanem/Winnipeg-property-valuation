@@ -183,7 +183,9 @@ When new property data becomes available (e.g., a single house or a batch of lis
    new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
 
 
----    
+---
+
+---
 ## 🤖 Note on AI Assistance
 Parts of this project were developed with guidance from **OpenAI’s ChatGPT (GPT-5)** 
 AI assistance helped me to:  
