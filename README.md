@@ -178,10 +178,12 @@ When new property data becomes available (e.g., a single house or a batch of lis
    for (col in cat_cols) {
    new_data[[col]] <- factor(new_data[[col]], levels = levels(df_clean[[col]]))}
    
-###. **🤖 Making Predictions:**  
+### 🤖 Making Predictions:
    Convert all categorical columns into factors using the same levels as the training dataset to avoid mismatches:  
    ```r
-   new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
+   predicted_log   <- predict(final_model_rf, newdata = new_data)
+   predicted_value <- exp(predicted_log) - 1  # Convert back to the original scale
+```
 
 ---
 ## 🤖 Note on AI Assistance
