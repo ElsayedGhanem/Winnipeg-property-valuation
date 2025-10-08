@@ -167,10 +167,9 @@ When new property data becomes available (e.g., a single house or a batch of lis
    new_data$assessed_land_area_log <- log(new_data$assessed_land_area + 1)
 
 2. **Neighbourhood Mean Value**
-  
-Merge the neigh_mean_value feature, which was computed from the training data, instead of recalculating it from the new dataset:
-```r
-   new_data <- merge(new_data, neigh_mean, by = "neighbourhood_area", all.x = TRUE)
+  Merge the neigh_mean_value feature, which was computed from the training data, instead of recalculating it from the new dataset:
+  ```r
+   new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
 
 3. **Categorical Variables**
 
@@ -186,7 +185,6 @@ for (col in cat_cols) {
 ```r
    predicted_log <- predict(final_model_rf, newdata = new_data)
    predicted_value <- exp(predicted_log) - 1  # Convert back to the original scale
-
 ---
 
 ## 🤖 Note on AI Assistance
