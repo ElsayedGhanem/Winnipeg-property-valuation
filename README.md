@@ -170,21 +170,6 @@ When new property data becomes available (e.g., a single house or a batch of lis
   Merge the neigh_mean_value feature, which was computed from the training data, instead of recalculating it from the new dataset:
   ```r
    new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
-
-3. **Categorical Variables**
-
-Convert all categorical columns into factors using the same levels as the training dataset to avoid mismatches:
-```r
-   cat_cols <- c("basement", "basement_finish", "air_conditioning", "fire_place", "attached_garage", "detached_garage", "pool", "building_type", "property_class_1")
-
-for (col in cat_cols) {
-  new_data[[col]] <- factor(new_data[[col]], levels = levels(df_clean[[col]]))
-}
-
-### 🤖 🤖 Making Predictions
-```r
-   predicted_log <- predict(final_model_rf, newdata = new_data)
-   predicted_value <- exp(predicted_log) - 1  # Convert back to the original scale
 ---
 
 ## 🤖 Note on AI Assistance
