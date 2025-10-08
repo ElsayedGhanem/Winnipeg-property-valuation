@@ -114,8 +114,8 @@ To interpret the model, the variable importance plot was analyzed. The table bel
 |--------|------------|---------------|--------|--------|
 | Linear Regression (raw) | Numeric only | 0.07 | 2591027 | Baseline |
 | Linear Regression (raw) | Numeric + categorical | 0.13 | 2524865 |Added categorical variables |
-| Linear Regression (raw) | Log-Transformed variables + Numeric Variables only| 0.45 | 0.565 |Improved interpretability |
-| Linear Regression (raw) | Log-Transformed variables (Numeric + categorical) | 0.61 | 0.482 | Stronger fit, improved accuracy |
+| Linear Regression (log-trasformed) | Log-Transformed variables + Numeric Variables only| 0.45 | 0.565 |Improved interpretability |
+| Linear Regression (log-trasformed) | Log-Transformed variables (Numeric + categorical) | 0.61 | 0.482 | Stronger fit, improved accuracy |
 | Random Forest | Log-Transformed variables (Numeric + categorical) | 0.70 | 0.151 | Best overall performance
 
 These results summarize the progressive improvements achieved across different modeling stages.  
