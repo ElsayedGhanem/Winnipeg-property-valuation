@@ -177,15 +177,14 @@ When new property data becomes available (e.g., a single house or a batch of lis
    cat_cols <- c("basement", "basement_finish", "air_conditioning","fire_place", "attached_garage", "detached_garage","pool", "building_type", "property_class_1")
    for (col in cat_cols) {
    new_data[[col]] <- factor(new_data[[col]], levels = levels(df_clean[[col]]))}
---- 
 
-## 🤖 Making Predictions
+### 🤖 Making Predictions
 After preprocessing, predictions can be generated using the trained model:
  ```r
  x = 2
 
---- 
-   
+
+---    
 ## 🤖 Note on AI Assistance
 Parts of this project were developed with guidance from **OpenAI’s ChatGPT (GPT-5)** 
 AI assistance helped me to:  
