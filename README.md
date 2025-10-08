@@ -43,6 +43,15 @@ After cleaning and feature selection, the following predictors were used in mode
   - To address skewness in highly right-skewed numeric variables, log transformations were applied to key predictors such as `total_assessed_value`, `total_living_area`, and `assessed_land_area`.
   - The log-transformed features (`total_assessed_value_log`, `total_living_area_log`, and `assessed_land_area_log`) helped stabilize variance and improve linear relationships between variables.
 
+- **Transformed High-Cardinality Categorical Variable (`neighbourhood_area`):**  
+  The original `neighbourhood_area` variable contained over **200 unique categories**, which posed two main challenges:  
+  1. `RandomForest` models in R cannot efficiently handle categorical features with more than ~50 levels.  
+  2. Including over 200 dummy variables in a `Linear Regression` model would cause severe overfitting and increase computational cost.  
+
+  To address this, the categorical variable was transformed into a **numeric feature** representing the *average assessed property value* within each neighbourhood.  
+
+  This approach preserved the geographic effect on property values while reducing dimensionality and improving model stability.
+
 - **Correlation Analysis:**
  - We compared correlations between the original (raw) and log-transformed features to evaluate the impact of transformation on model interpretability.  
 After transformation, correlations between predictors and the target variable increased noticeably:
