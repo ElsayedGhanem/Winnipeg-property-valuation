@@ -179,9 +179,8 @@ When new property data becomes available (e.g., a single house or a batch of lis
    new_data[[col]] <- factor(new_data[[col]], levels = levels(df_clean[[col]]))}
 
 ### 🤖 Making Predictions
-After preprocessing, predictions can be generated using the trained model:
- ```r
- x = 2
+```r
+   new_data <- merge(new_data, neighbour_mean, by = "neighbourhood_area", all.x = TRUE)
 
 
 ---    
