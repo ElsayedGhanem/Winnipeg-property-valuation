@@ -36,7 +36,7 @@ All data cleaning and preparation steps were automated in the `data_preparation.
 - **Selected Features:**  
 After cleaning and feature selection, the following predictors were used in modeling:
 
-- `total_living_area` , `assessed_land_area`, `rooms` , `year_built` , `basement` , `basement_finish` , `air_conditioning` , `fire_place` , `attached_garage` , `detached_garage` , `pool` , `building_type , `property_class_1.
+- `total_living_area` , `assessed_land_area`, `rooms` , `year_built` , `basement` , `basement_finish` , `air_conditioning` , `fire_place` , `attached_garage` , `detached_garage` , `pool` , `building_type , `property_class_1, `neighbourhood_area.
 -The target variable used for prediction was **`total_assessed_value`**.
 
 - **Performed Feature Transformation:**
