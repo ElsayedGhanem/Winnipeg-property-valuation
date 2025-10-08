@@ -111,7 +111,7 @@ To interpret the model, the variable importance plot was analyzed. The table bel
 ---
 ### ✅ Summary  
 | Model | Features | R² (Approx.) | RMSE | Notes |
-|--------|------------|---------------|--------|
+|--------|------------|---------------|--------|--------|
 | Linear Regression (raw) | Numeric only | 0.07 | 2591027 | Baseline |
 | Linear Regression (raw) | Numeric + categorical | 0.13 | 2524865 | Baseline |
 | Linear Regression (raw) | Log-Transformed variables with numeric only| 0.45 | 0.565 |Improved interpretability |
