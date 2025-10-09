@@ -25,7 +25,7 @@ Data cleaning and transformation were fully automated in `data_preparation.R`.
   The original `neighbourhood_area` column contained over 200 unique values, which caused dimensionality issues and model instability.  
   - For **Linear Regression**, including all factor levels would have introduced severe multicollinearity and overfitting.  
   - For **Random Forest**, R’s default implementation cannot process categorical variables with more than 53 categories.  
-  To address this, the dataset was aggregated to create a **`neighbour_mean_value`** variable — representing the average assessed value per neighbourhood — which captures location-based variation without exploding feature dimensions.  
+  To address this, the dataset was aggregated to create a **`neighbour_mean_value`** variable, representing the average assessed value per neighbourhood, which captures location-based variation without increasing feature dimensions.  
 
 Correlation analysis confirmed that these transformations significantly strengthened relationships with the target variable (e.g., correlation between `total_living_area` and `total_assessed_value` increased from 0.034 to 0.402).  
 
