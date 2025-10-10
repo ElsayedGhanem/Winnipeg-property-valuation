@@ -107,25 +107,26 @@ To further enhance predictive performance and capture **nonlinear relationships*
 - `ntree = 200` (number of trees)  
 - `sampsize = 0.6*nrow(dataframe)` (sample size per tree)  
 
-The Random Forest model improved the explained variance to **R² ≈ 0.74** and **RMSE = 0.151**, demonstrating its ability to model complex interactions among features.  
+The Random Forest model improved the explained variance to **R² ≈ 75.15%** and **RMSE = 0.147**, demonstrating its ability to model complex interactions among features.  
 Feature importance analysis revealed that the most influential predictors were:  
 To interpret the model, the variable importance plot was analyzed. The table below shows the **top predictors contributing to the model**:
 
 | Feature                 | Importance (%) |
 |--------------------------|----------------|
-| year_built               | 29.57 |
-| assessed_land_area_log   | 26.86 |
-| total_living_area_log    | 22.86 |
-| property_class_1         | 16.05 |
-| building_type            | 13.48 |
-| basement_finish          | 9.73 |
-| fire_place               | 9.28 |
-| attached_garage          | 9.64 |
-| air_conditioning         | 8.00 |
-| basement                 | 7.89 |
-| rooms                    | 7.37 |
-| detached_garage          | 6.23 |
-| pool                     | 5.67 |  
+| neighbour_mean_value     | 38.55 |
+| assessed_land_area_log   | 37.71 |
+| year_built               | 22.03 |
+| total_living_area_log    | 21.73 |
+| property_class_1         | 21.46 |
+| attached_garage          | 12.42 |
+| basement_finish          | 10.85 |
+| building_type            | 10.73 |
+| basement                 | 8.71 |
+| fire_place               | 8.52 |
+| air_conditioning         | 7.89 |
+| detached_garage          | 7.86 |
+| rooms                    | 7.27 |
+| pool                     | 6.19|  
 
 ---
 ### ✅ Summary  
@@ -135,13 +136,13 @@ To interpret the model, the variable importance plot was analyzed. The table bel
 | Linear Regression (raw) | Numeric + categorical | 0.13 | 2524865 |Added categorical variables |
 | Linear Regression (log-trasformed) | Log-Transformed variables + Numeric Variables only| 0.45 | 0.565 |Improved interpretability |
 | Linear Regression (log-trasformed) | Log-Transformed variables (Numeric + categorical) | 0.61 | 0.482 | Stronger fit, improved accuracy |
-| Random Forest | Log-Transformed variables (Numeric + categorical) | 0.74 | 0.151 | Best overall performance
+| Random Forest | Log-Transformed variables (Numeric + categorical) | 0.75 | 0.147 | Best overall performance
 
 These results summarize the progressive improvements achieved across different modeling stages.  
 Starting with a simple linear regression using only numeric features, the baseline model demonstrated limited predictive power.  
 By gradually incorporating categorical variables and applying log-transformations to reduce skewness and stabilize variance, model accuracy improved substantially.  
 
-The final Random Forest model achieved the best performance, explaining approximately 70% of the variance in property values and achieving the lowest RMSE.  
+The final Random Forest model achieved the best performance, explaining approximately **75.15%** of the variance in property values and achieving the lowest RMSE.  
 This improvement highlights the benefits of both data transformation and the use of nonlinear algorithms capable of capturing complex feature interactions.
 
 ---
