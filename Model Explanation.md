@@ -7,7 +7,7 @@ To start, a simple model was used to understand how each factor affects property
 To improve accuracy, the data was adjusted so that very large or very small numbers did not distort the results.  
 
 Next, a more advanced machine-learning model was used to recognize **patterns and interactions** that are not directly visible in the data.  
-This improved the model’s ability to explain about **74% of the information in property values**, showing that the **year built, land size, living area, and building type** are among the strongest drivers of a home’s value.
+This improved the model’s ability to explain about **75.15% of the information in property values**, showing that the **year built, land size, living area, and building type** are among the strongest drivers of a home’s value.
 
 Overall, this project demonstrates how data analysis and machine learning can support **fairer, faster, and more consistent property assessments** for both residents and city decision-makers.
 
@@ -32,12 +32,12 @@ Correlation analysis confirmed that these transformations significantly strength
 ### 🧠 Modeling Approach  
 Two main models were trained and compared using **5-fold cross-validation**:
 1. **Linear Regression (LM):**  
-   Served as a baseline model to capture linear relationships. The initial R² was ~0.13.  
-   After transformations and inclusion of categorical features, R² improved to ~0.61.  
+   Served as a baseline model to capture linear relationships. The initial R² was ~7%.  
+   After transformations and inclusion of categorical features, R² improved to ~61%.  
 
 2. **Random Forest (RF):**  
    Designed to model nonlinear interactions among predictors.  
-   The RF achieved an R² ≈ of ~0.74, with ~74% variance explained, confirming better generalization and robustness.  
+   The RF achieved an R² ≈ of ~0.75, with ~75.15% variance explained, confirming better generalization and robustness.  
 
 ### 🔍 Feature Importance  
 Variable importance analysis indicated that:  
@@ -45,19 +45,20 @@ Variable importance analysis indicated that:
 
 | Feature                 | Importance (%) |
 |--------------------------|----------------|
-| year_built               | 29.57 |
-| assessed_land_area_log   | 26.86 |
-| total_living_area_log    | 22.86 |
-| property_class_1         | 16.05 |
-| building_type            | 13.48 |
-| basement_finish          | 9.73 |
-| fire_place               | 9.28 |
-| attached_garage          | 9.64 |
-| air_conditioning         | 8.00 |
-| basement                 | 7.89 |
-| rooms                    | 7.37 |
-| detached_garage          | 6.23 |
-| pool                     | 5.67 |
+| neighbour_mean_value     | 38.55 |
+| assessed_land_area_log   | 37.71 |
+| year_built               | 22.03 |
+| total_living_area_log    | 21.73 |
+| property_class_1         | 21.46 |
+| attached_garage          | 12.42 |
+| basement_finish          | 10.85 |
+| building_type            | 10.73 |
+| basement                 | 8.71 |
+| fire_place               | 8.52 |
+| air_conditioning         | 7.89 |
+| detached_garage          | 7.86 |
+| rooms                    | 7.27 |
+| pool                     | 6.19|  
 
 ### ✅ Results and Insights  
 The combination of **data transformations** and **ensemble learning** enhanced model accuracy and interpretability.  
